@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export class FeedbackOptions extends Component {
   render() {
@@ -29,3 +30,8 @@ const Button = styled.button`
   border-radius: 5px;
   cursor: pointer;
 `;
+
+FeedbackOptions.propTypes = {
+  options: PropTypes.arrayOf(PropTypes.string.isRequired),
+  onLeaveFeedback: PropTypes.func.isRequired,
+};
