@@ -1,26 +1,23 @@
-import styled from 'styled-components';
-import { Component } from 'react';
 import PropTypes from 'prop-types';
+import { StyledText } from './StyledText';
 
-export class Statistics extends Component {
-  render() {
-    const { good, neutral, bad, total, positivePercentage } = this.props;
-    return (
-      <>
-        <StyledText> Good: {good}</StyledText>
-        <StyledText> Neutral: {neutral}</StyledText>
-        <StyledText> Bad: {bad}</StyledText>
-        <StyledText> Total: {total} </StyledText>
-        <StyledText>Positive feedback: {positivePercentage}%</StyledText>
-      </>
-    );
-  }
-}
-
-const StyledText = styled.p`
-  font-size: 24px;
-  display: block;
-`;
+export const Statistics = ({
+  good,
+  neutral,
+  bad,
+  total,
+  positivePercentage,
+}) => {
+  return (
+    <>
+      <StyledText> Good: {good}</StyledText>
+      <StyledText> Neutral: {neutral}</StyledText>
+      <StyledText> Bad: {bad}</StyledText>
+      <StyledText> Total: {total} </StyledText>
+      <StyledText>Positive feedback: {positivePercentage}%</StyledText>
+    </>
+  );
+};
 
 Statistics.propTypes = {
   good: PropTypes.number.isRequired,

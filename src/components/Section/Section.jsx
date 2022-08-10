@@ -1,25 +1,14 @@
-import styled from 'styled-components';
-import { Component } from 'react';
 import PropTypes from 'prop-types';
+import { StyledSection } from './StyledSection';
 
-export class Section extends Component {
-  render() {
-    const { title, children } = this.props;
-    return (
-      <StyledSection>
-        <h1>{title}</h1>
-        {children}
-      </StyledSection>
-    );
-  }
-}
-
-const StyledSection = styled.section`
-  background-color: lightgray;
-  max-width: 500px;
-  border-radius: 5px;
-  margin: 0 auto;
-`;
+export const Section = ({ title, children }) => {
+  return (
+    <StyledSection>
+      <h1>{title}</h1>
+      {children}
+    </StyledSection>
+  );
+};
 
 Section.propTypes = {
   title: PropTypes.string.isRequired,
